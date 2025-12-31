@@ -15,20 +15,10 @@
 };
 
 / {
-    /* 通常のポインターモード（Layer5以外） */
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        layers = <0 1 2 3 4 6>;
-    };
-
-    /* スクロールモード（Layer5のみ） */
-    trackball_scroll_listener: trackball_scroll_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        layers = <5>;
     };
 };
 
