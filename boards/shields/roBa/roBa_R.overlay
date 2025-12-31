@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -15,10 +16,31 @@
 };
 
 / {
+    /* マウス入力をスクロール入力に変換するプロセッサー */
+    input_processor_scroller: input_processor_scroller {
+        compatible = "zmk,input-processor-code-mapper";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        map = <REL_X REL_HWHEEL>
+            , <REL_Y REL_WHEEL>
+            ;
+    };
+
+    /* 通常のポインターモード（Layer5以外） */
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        layers = <0 1 2 3 4 6>;
+    };
+
+    /* スクロールモード（Layer5のみ） */
+    trackball_scroll_listener: trackball_scroll_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        layers = <5>;
+        input-processors = <&input_processor_scroller>;
     };
 };
 
