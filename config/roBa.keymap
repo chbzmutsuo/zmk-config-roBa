@@ -107,6 +107,13 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc MOVE_Y(5)>, <&msc SCRL_DOWN>;
         };
+
+        scroll_only: scroll_only {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SCROLL_ONLY";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
     };
 
     keymap {
@@ -174,6 +181,8 @@
 &trans  &kp LC(LG(X))  &kp LC(LG(C))  &kp LC(LG(V))  &trans  &trans      &trans  &trans  &kp LS(LA(LG(LEFT)))  &kp LS(LG(UP_ARROW))      &kp LS(LA(LG(RIGHT)))  &trans
 &trans  &trans         &trans         &trans         &trans  &trans      &trans  &trans                                                                         &trans
             >;
+
+            sensor-bindings = <&scroll_only>;
         };
 
         ONISHI {
