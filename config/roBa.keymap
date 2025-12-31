@@ -196,13 +196,4 @@
             sensor-bindings = <&scroll_up_down>;
         };
     };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        WINDOW {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
 };
