@@ -66,6 +66,11 @@
             bindings = <&kp SLASH>;
             key-positions = <6 7>;
         };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <21 20>;
+        };
     };
 
     macros {
@@ -139,7 +144,7 @@
             bindings = <
 &kp Q           &kp L         &kp U             &kp COMMA  &kp DOT                                             &kp F                        &kp W  &kp R  &kp Y  &kp P
 &kp E           &kp I         &kp A             &kp O      &kp MINUS             &trans                &trans  &kp K                        &kp T  &kp N  &kp S  &kp H
-&kp Z           &kp X         &kp C             &kp V      &kp SEMI              &to 0                 &trans  &kp G                        &kp D  &kp M  &kp J  &kp B
+&kp Z           &kp X         &kp C             &kp V      &trans                &to 0                 &trans  &kp G                        &kp D  &kp M  &kp J  &kp B
 &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE  &kp LA(LEFT_COMMAND)  &kp LEFT_CONTROL      &mo 3   &mt LC(LEFT_ALT) LANGUAGE_1                       &mo 2
             >;
 
