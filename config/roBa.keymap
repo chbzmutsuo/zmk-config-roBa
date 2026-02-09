@@ -71,6 +71,11 @@
             bindings = <&kp SEMICOLON>;
             key-positions = <21 20>;
         };
+
+        commandSpace {
+            bindings = <&ctrlSpace>;
+            key-positions = <13 12>;
+        };
     };
 
     macros {
@@ -107,6 +112,13 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LG(RIGHT_ARROW)) &kp BACKSPACE>;
             label = "DELETELINEFORWARD";
+        };
+
+        ctrlSpace: ctrlSpace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp SPACE>;
+            label = "CTRLSPACE";
         };
     };
 
